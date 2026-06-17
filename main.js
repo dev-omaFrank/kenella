@@ -78,8 +78,9 @@ updateCountdown();
 // Bundle Selection
 const bundles = {
     1: { name: 'Quantum Glasses Only — ₦100,000', price: 100000 },
-    2: { name: 'Sprayer Only — ₦50,000', price: 50000 },
-    3: { name: 'Complete 5-in-1 Combo — ₦160,000', price: 160000 }
+    2: { name: 'Nano Ionic Eye Moistener Only — ₦50,000', price: 50000 },
+    3: { name: 'Complete 5-in-1 Combo — ₦160,000', price: 160000 },
+    4: { name: 'Therapeutic Eye Massager Only — ₦50,000', price: 50000 }
 };
 
 function selectBundle(bundleId) {
@@ -395,11 +396,11 @@ const fakeNames = [
     { name: 'Amina', location: 'Kano', item: 'Complete Combo' },
     { name: 'Emeka', location: 'Enugu', item: 'Quantum Glasses' },
     { name: 'Fatima', location: 'Abuja', item: 'Complete Combo' },
-    { name: 'Ibrahim', location: 'Kaduna', item: 'Sprayer + Plan' },
+    { name: 'Ibrahim', location: 'Kaduna', item: 'Nano Ionic Eye Moistener + Plan' },
     { name: 'Ngozi', location: 'PH', item: 'Complete Combo' },
     { name: 'Yusuf', location: 'Ibadan', item: 'Quantum Glasses' },
     { name: 'Blessing', location: 'Lagos', item: 'Complete Combo' },
-    { name: 'Abdul', location: 'Kano', item: 'Sprayer + Plan' },
+    { name: 'Abdul', location: 'Kano', item: 'Nano Ionic Eye Moistener + Plan' },
     { name: 'Chioma', location: 'Owerri', item: 'Complete Combo' }
 ];
 

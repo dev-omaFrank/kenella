@@ -1224,6 +1224,7 @@ section {
     transition: var(--transition);
     background: var(--bg);
     color: var(--text);
+    width: 100%;
 }
 
 .form-group input:focus,
