@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed — Thank You | Kenella Health</title>
+    <meta name="description" content="Your Kenella eye comfort combo order has been received. Check your email for confirmation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .thank-you-container {
+            max-width: 600px;
+            animation: fadeIn 0.6s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .success-icon {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            animation: bounce 1s ease infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .highlight {
+            color: #14b8a6;
+        }
+        
+        p {
+            font-size: 1.125rem;
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .order-details {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .order-details h3 {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+        
+        .order-details ul {
+            list-style: none;
+        }
+        
+        .order-details li {
+            padding: 0.5rem 0;
+            color: #94a3b8;
+            border-bottom: 1px solid #334155;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .order-details li:last-child {
+            border-bottom: none;
+        }
+        
+        .order-details li::before {
+            content: '✓';
+            color: #16a34a;
+            font-weight: 700;
+        }
+        
+        .next-steps {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .next-steps h3 {
+            color: #f59e0b;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .next-steps p {
+            font-size: 0.9375rem;
+            margin-bottom: 0;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #0d9488, #14b8a6);
+            box-shadow: 0 4px 14px rgba(13, 148, 136, 0.4);
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.5);
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 1rem 2rem;
+            background: #16a34a;
+            color: white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(22, 163, 74, 0.4);
+        }
+        
+        .footer-brand {
+            margin-top: 3rem;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #0d9488;
+        }
+        
+        .footer-brand span {
+            color: #f59e0b;
+        }
+        
+        @media (max-width: 480px) {
+            h1 { font-size: 1.75rem; }
+            .success-icon { font-size: 4rem; }
+            .order-details { padding: 1.5rem; }
+        }
+    </style>
+    <!-- Meta Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+        fbq('track', 'Purchase');
+    </script>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="success-icon">🎉</div>
+        <h1>Order Received! <span class="highlight">You're On Your Way to Better Vision</span></h1>
+        <p>Thank you for trusting Kenella Health with your eye wellness journey. We've received your order and will email you within <strong>24 hours</strong> to confirm your delivery details.</p>
+        
+        <div class="order-details">
+            <h3>What Happens Next:</h3>
+            <ul>
+                <li>Check your email for order confirmation</li>
+                <li>Our team will call to confirm your delivery address</li>
+                <li>Your package arrives — pay cash on delivery</li>
+                <li>Start your 12-week eye restoration protocol</li>
+                <li>Get personalized follow-up support for 3 months</li>
+            </ul>
+        </div>
+        
+        <div class="next-steps">
+            <h3>⚡ Quick Tip</h3>
+            <p>While you wait for delivery, start reducing screen time and drink more water. Your eyes will thank you.</p>
+        </div>
+        
+        <a href="index.html" class="btn">← Back to Homepage</a>
+        
+        <div class="footer-brand">KENELLA<span>Health</span></div>
+    </div>
+</body>
+</html>
