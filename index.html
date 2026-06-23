@@ -16,7 +16,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -45,7 +45,14 @@
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">KENELLA<span class="logo-accent">Health</span></div>
+
+            <div class="nav-contact">
+                <a href="https://wa.me/2349074374708?text=Hi%20Kenella%2C%20I%20want%20to%20order%20the%20eye%20comfort%20combo" 
+                class="nav-email" target="_blank">💬 Order via WhatsApp</a>
+            </div>
         </div>
+
+        
     </nav>
 
     <!-- HERO SECTION -->
@@ -78,7 +85,7 @@
                 </div>
 
                 <div class="hero-cta">
-                    <a href="#order" class="btn btn-primary btn-large" onclick="fbq('track', 'InitiateCheckout')">
+                    <a href="#order" class="btn btn-primary btn-large">
                         <span class="btn-text">GET THE COMBO NOW — ₦160,000</span>
                         <span class="btn-sub">Pay Cash When We Deliver</span>
                     </a>
@@ -748,7 +755,7 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contact Us</h4>
-                    <p>📧 Email: <a href="mailto:kenellahealthlink@gmail.com">kenellahealthlink@gmail.com</a></p>
+                    <p>💬 WhatsApp: <a href="https://wa.me/2349074374708" target="_blank">0805 619 0890</a></p>
                     <p>🚚 Free Delivery Nationwide</p>
                     <p>💵 Payment on Delivery</p>
                 </div>
@@ -769,7 +776,7 @@
 
     <!-- STICKY CTA (mobile) -->
     <div class="sticky-cta" id="stickyCta">
-        <a href="#order" class="btn btn-primary btn-sticky" onclick="fbq('track', 'InitiateCheckout')">
+        <a href="#order" class="btn btn-primary btn-sticky">
             <span>ORDER NOW — ₦160,000</span>
         </a>
     </div>
@@ -798,6 +805,11 @@
         </div>
     </div>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/2349074374708?text=Hi%20Kenella%2C%20I%20want%20to%20know%20more%20about%20the%20eye%20combo" 
+    class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        <span>💬</span>
+    </a>
     <script src="main.js"></script>
 </body>
 

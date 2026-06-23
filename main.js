@@ -172,15 +172,15 @@ function confirmConsent(hasMoney) {
         processOrder(pendingFormData);
     } else {
         const modalContent = document.querySelector('#consentModal .modal-content');
-        
         modalContent.innerHTML = `
             <div class="decline-message">
                 <div class="modal-icon">😔</div>
                 <h4>No Problem!</h4>
-                <p>We understand. Come back when you're ready to order. Our promo prices are available for a limited time only.</p>
-                <button type="button" class="btn btn-outline" onclick="closeDeclineMessage()">
-                    Close
-                </button>
+                <p>Come back when you're ready. Your eyes are worth investing in. Save our number: <strong>0907 437 4708</strong></p>
+                <a href="https://wa.me/2349074374708?text=Hi%20Kenella%2C%20I%20want%20to%20order%20later" 
+                   class="btn btn-outline" target="_blank">
+                    Message Us on WhatsApp
+                </a>
             </div>
         `;
     }
@@ -188,13 +188,10 @@ function confirmConsent(hasMoney) {
 
 function closeDeclineMessage() {
     hideConsentModal();
-    setTimeout(() => {
-        location.reload();
-    }, 300);
 }
 
 // Process order via Web3Forms — redirects to thank-you.html on success
-async function processOrder(data) {
+function processOrder(data) {
     const bundle = bundles[data.bundle];
     
     // Track with Meta Pixel
@@ -211,54 +208,20 @@ async function processOrder(data) {
         }
     }
     
-    // Build Web3Forms data
-    const formData = new FormData();
-    formData.append("access_key", "d5b12c36-d320-44b2-80f1-5228a99babde");
-    formData.append("name", data.fullName);
-    formData.append("email", data.email);
-    formData.append("phone", data.phone);
-    formData.append("address", data.address);
-    formData.append("bundle", bundle.name);
-    formData.append("price", "₦" + bundle.price.toLocaleString());
-    formData.append("eye_condition", data.eyeCondition);
-    formData.append("notes", data.notes || "None");
-    formData.append("subject", "NEW KENELLA ORDER — " + bundle.name);
+    // Build WhatsApp message
+    const message = `*NEW KENELLA ORDER*%0A%0A` +
+        `*Name:* ${data.fullName}%0A` +
+        `*Email:* ${data.email}%0A` +
+        `*Phone:* ${data.phone}%0A` +
+        `*Address:* ${data.address}%0A` +
+        `*Package:* ${bundle.name}%0A` +
+        `*Eye Concern:* ${data.eyeCondition}%0A` +
+        `*Notes:* ${data.notes || 'None'}%0A%0A` +
+        `I have ₦${bundle.price.toLocaleString()} ready for payment on delivery.`;
     
-    // Show loading state on button
-    const submitBtn = document.querySelector('.btn-submit');
-    if (submitBtn) {
-        submitBtn.innerHTML = '<span class="btn-text">SENDING ORDER...</span>';
-        submitBtn.disabled = true;
-    }
-    
-    try {
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-        });
-        
-        const result = await response.json();
-        
-        if (response.ok && result.success) {
-            // ✅ REDIRECT TO THANK YOU PAGE
-            window.location.href = 'thank-you.html';
-            
-        } else {
-            alert("Failed to send order. Please email us directly at orders@kenellahealth.com");
-            if (submitBtn) {
-                submitBtn.innerHTML = '<span class="btn-text">PLACE ORDER NOW</span><span class="btn-sub">We\'ll Email to Confirm Before Delivery</span>';
-                submitBtn.disabled = false;
-            }
-        }
-        
-    } catch (error) {
-        console.error('Order submission failed:', error);
-        alert("Network error. Please try again or email us: orders@kenellahealth.com");
-        if (submitBtn) {
-            submitBtn.innerHTML = '<span class="btn-text">PLACE ORDER NOW</span><span class="btn-sub">We\'ll Email to Confirm Before Delivery</span>';
-            submitBtn.disabled = false;
-        }
-    }
+    // Redirect to WhatsApp
+    const whatsappUrl = `https://wa.me/2349074374708?text=${message}`;
+    window.location.href = whatsappUrl;
 }
 
 // Order Form Handler
